@@ -42,7 +42,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-white dark:bg-gray-800">
+    <section id="about" className="py-20 md:py-32 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -53,7 +53,7 @@ export function About() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <motion.span
-              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
+              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium mb-4 border border-blue-200 dark:border-transparent"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2 }}
@@ -69,7 +69,7 @@ export function About() {
               Get to Know Me
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -94,17 +94,17 @@ export function About() {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   style={{ padding: "3px" }}
                 >
-                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-800" />
+                  <div className="w-full h-full rounded-full bg-white dark:bg-slate-900" />
                 </motion.div>
                 
                 {/* Profile image */}
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-slate-900 shadow-2xl">
                   <img src="/mypic.png" alt="Muhammad Uzair" className="w-full h-full object-cover" />
                 </div>
 
                 {/* Floating badge */}
                 <motion.div
-                  className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-700 rounded-2xl p-4 shadow-xl"
+                  className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-slate-700"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -132,13 +132,13 @@ export function About() {
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 Hello! I&apos;m Muhammad Uzair
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 A passionate Full Stack Developer based in Karachi, Pakistan. I specialize in
                 building exceptional digital experiences that combine beautiful design with
                 robust functionality. With a strong foundation in both frontend and backend
                 technologies, I bring ideas to life through clean, efficient code.
               </p>
-              <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to
                 open-source projects, or sharing knowledge with the developer community.
                 I believe in continuous learning and pushing the boundaries of what&apos;s possible
@@ -155,7 +155,7 @@ export function About() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50"
+                    className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700"
                   >
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       {item.label}
@@ -169,7 +169,7 @@ export function About() {
 
               <motion.a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -194,7 +194,7 @@ export function About() {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="relative group p-6 rounded-2xl bg-gray-50 dark:bg-gray-700/50 text-center hover:bg-white dark:hover:bg-gray-700 transition-all shadow-md hover:shadow-xl"
+                className="relative group p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700 text-center hover:bg-white dark:hover:bg-slate-800/80 transition-all shadow-md hover:shadow-xl"
                 whileHover={{ y: -5, scale: 1.02 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -208,12 +208,12 @@ export function About() {
                 </div>
 
                 {/* Counter */}
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-white mb-2">
                   <AnimatedCounter end={stat.end} suffix={stat.suffix} />
                 </div>
 
                 {/* Label */}
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {stat.label}
                 </p>
 

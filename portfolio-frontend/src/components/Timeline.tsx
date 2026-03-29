@@ -17,7 +17,7 @@ export function Timeline() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-purple-50/40 to-slate-50 dark:bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -28,7 +28,7 @@ export function Timeline() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <motion.span
-              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
+              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium mb-4 border border-blue-200 dark:border-transparent"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2 }}
@@ -44,7 +44,7 @@ export function Timeline() {
               Experience & Education
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -77,7 +77,7 @@ export function Timeline() {
                     {/* Timeline dot */}
                     <div className="absolute left-4 md:left-1/2 w-4 h-4 -translate-x-1/2 mt-6">
                       <motion.div
-                        className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white dark:border-gray-900 shadow-lg"
+                        className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white dark:border-slate-800 shadow-lg"
                         initial={{ scale: 0 }}
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
                         transition={{ duration: 0.4, delay: 0.5 + index * 0.15 }}
@@ -97,12 +97,12 @@ export function Timeline() {
                       }`}
                     >
                       <motion.div
-                        className="group p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700"
+                        className="group p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all border border-gray-100 dark:border-slate-700 border-l-4 border-l-blue-500"
                         whileHover={{ y: -5, scale: 1.02 }}
                       >
                         {/* Icon badge */}
                         <div
-                          className={`w-12 h-12 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 flex items-center justify-center mb-4 ${
+                          className={`w-12 h-12 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-500 dark:to-purple-500 flex items-center justify-center mb-4 ${
                             isEven ? "md:ml-auto" : ""
                           }`}
                         >
@@ -113,8 +113,8 @@ export function Timeline() {
                         <span
                           className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${
                             experience.type === "work"
-                              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
-                              : "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400"
+                              : "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
                           } ${isEven ? "md:float-right" : ""}`}
                         >
                           {experience.type === "work" ? "Work" : "Education"}
@@ -127,7 +127,7 @@ export function Timeline() {
 
                         {/* Company/Institution */}
                         <div
-                          className={`flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-3 ${
+                          className={`flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-3 ${
                             isEven ? "md:justify-end" : ""
                           }`}
                         >
@@ -137,7 +137,7 @@ export function Timeline() {
 
                         {/* Date */}
                         <div
-                          className={`flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 mb-4 ${
+                          className={`flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4 ${
                             isEven ? "md:justify-end" : ""
                           }`}
                         >
@@ -147,7 +147,7 @@ export function Timeline() {
 
                         {/* Description bullets */}
                         <ul
-                          className={`space-y-2 text-gray-600 dark:text-gray-400 text-sm ${
+                          className={`space-y-2 text-gray-600 dark:text-gray-300 text-sm ${
                             isEven ? "md:text-right" : ""
                           }`}
                         >

@@ -70,12 +70,38 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-gray-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:to-slate-800"
     >
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* Floating blobs */}
+        <motion.div
+          className="absolute top-20 left-10 w-72 h-72 bg-blue-400/8 dark:bg-blue-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/8 dark:bg-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -40, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-400/8 dark:bg-pink-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        />
+
         {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-blue-400/20 dark:bg-blue-500/10 rounded-full"
@@ -98,7 +124,7 @@ export function Hero() {
         ))}
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
       </div>
 
       <motion.div
@@ -109,7 +135,7 @@ export function Hero() {
       >
         {/* Greeting */}
         <motion.div variants={itemVariants}>
-          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium mb-6 border border-blue-200 dark:border-transparent">
             👋 Welcome to my portfolio
           </span>
         </motion.div>
@@ -119,14 +145,14 @@ export function Hero() {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
             Muhammad Uzair
           </span>
         </motion.h1>
 
         {/* Typing effect */}
         <motion.div variants={itemVariants} className="mb-6 h-12 flex items-center justify-center">
-          <span className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400">
+          <span className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300">
             I&apos;m a{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
               {displayedText}
@@ -142,7 +168,7 @@ export function Hero() {
         {/* Bio */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
+          className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8"
         >
           Passionate about creating beautiful, functional, and user-centered digital
           experiences. With expertise in modern web technologies, I bring ideas to life
@@ -153,7 +179,7 @@ export function Hero() {
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <motion.a
             href="#projects"
-            className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg shadow-blue-500/30 dark:shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/40 dark:hover:shadow-blue-500/50 transition-all"
+            className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg shadow-blue-500/30 dark:shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/40 dark:hover:shadow-blue-500/50 transition-all"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -168,7 +194,7 @@ export function Hero() {
           <motion.a
             href="/cv.pdf"
             download
-            className="group px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
+            className="group px-8 py-4 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-full font-semibold shadow-md hover:shadow-xl transition-all border border-gray-200 dark:border-slate-700"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -218,7 +244,7 @@ export function Hero() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-800 shadow-md hover:shadow-lg transition-all border border-gray-200/50 dark:border-gray-700/50"
+              className="p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-slate-800 shadow-md hover:shadow-lg transition-all border border-gray-200/50 dark:border-slate-700/50"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + index * 0.1 }}
@@ -242,7 +268,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-start justify-center p-2"
         >
           <motion.div className="w-1.5 h-3 bg-gray-400 dark:bg-gray-600 rounded-full" />
         </motion.div>

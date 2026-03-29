@@ -12,7 +12,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
-      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+      className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 border-t-2 border-t-blue-500"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -27,12 +27,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             {project.category === "fullstack" && "🚀"}
           </span>
         </div>
-        {/* Replace with actual image: */}
-        {/* <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-        /> */}
 
         {/* Overlay */}
         <motion.div
@@ -71,10 +65,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <span
           className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${
             project.category === "frontend"
-              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400"
               : project.category === "backend"
-              ? "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
-              : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+              ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
+              : "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400"
           }`}
         >
           {project.category === "fullstack" ? "Full Stack" : project.category.charAt(0).toUpperCase() + project.category.slice(1)}
@@ -86,7 +80,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
           {project.description}
         </p>
 
@@ -95,13 +89,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.techStack.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-medium"
+              className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 text-xs font-medium"
             >
               {tech}
             </span>
           ))}
           {project.techStack.length > 4 && (
-            <span className="px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-medium">
+            <span className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 text-xs font-medium">
               +{project.techStack.length - 4}
             </span>
           )}

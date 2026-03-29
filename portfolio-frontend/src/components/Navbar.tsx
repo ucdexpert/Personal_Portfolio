@@ -50,7 +50,7 @@ export function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg"
+            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-slate-800"
             : "bg-transparent"
         }`}
         animate={{
@@ -63,7 +63,7 @@ export function Navbar() {
             {/* Logo */}
             <motion.a
               href="#home"
-              className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 dark:from-blue-400 to-purple-600 dark:to-purple-400 bg-clip-text text-transparent"
+              className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => {
@@ -86,8 +86,8 @@ export function Navbar() {
                   }}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeSection === link.href.slice(1)
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      ? "text-blue-600 font-semibold bg-blue-50 dark:bg-slate-800 dark:text-blue-400"
+                      : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-slate-800"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -105,7 +105,7 @@ export function Navbar() {
                   href="https://github.com/ucdexpert"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -115,7 +115,7 @@ export function Navbar() {
                   href="https://www.linkedin.com/in/muhammad-uzair-9255433a0/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -123,7 +123,7 @@ export function Navbar() {
                 </motion.a>
                 <motion.a
                   href="mailto:hk202504@gmial.com"
-                  className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -136,7 +136,7 @@ export function Navbar() {
 
               {/* Mobile menu button */}
               <motion.button
-                className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Toggle menu"
@@ -163,7 +163,7 @@ export function Navbar() {
 
             {/* Drawer */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-72 bg-white dark:bg-gray-900 z-50 md:hidden shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-72 bg-white dark:bg-slate-900 z-50 md:hidden shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -172,12 +172,12 @@ export function Navbar() {
               <div className="flex flex-col h-full p-6">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-xl font-bold bg-gradient-to-r from-blue-600 dark:from-blue-400 to-purple-600 dark:to-purple-400 bg-clip-text text-transparent">
+                  <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                     Menu
                   </span>
                   <motion.button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800"
                     whileTap={{ scale: 0.9 }}
                   >
                     <X size={24} />
@@ -196,8 +196,8 @@ export function Navbar() {
                       }}
                       className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                         activeSection === link.href.slice(1)
-                          ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          ? "text-blue-600 font-semibold bg-blue-50 dark:bg-slate-800 dark:text-blue-400"
+                          : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800"
                       }`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -210,12 +210,12 @@ export function Navbar() {
                 </nav>
 
                 {/* Social links */}
-                <div className="flex items-center space-x-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex items-center space-x-4 pt-6 border-t border-gray-200 dark:border-slate-700">
                   <motion.a
                     href="https://github.com/ucdexpert"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="p-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -225,7 +225,7 @@ export function Navbar() {
                     href="https://www.linkedin.com/in/muhammad-uzair-9255433a0/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="p-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -233,7 +233,7 @@ export function Navbar() {
                   </motion.a>
                   <motion.a
                     href="mailto:hk202504@gmial.com"
-                    className="p-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="p-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >

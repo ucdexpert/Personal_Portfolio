@@ -26,14 +26,14 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12">
+    <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
             <motion.a
               href="#home"
-              className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent inline-block mb-4"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent inline-block mb-4"
               whileHover={{ scale: 1.05 }}
             >
               Portfolio
@@ -50,7 +50,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-all"
+                  className="p-2 rounded-lg bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white transition-all"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}
@@ -110,7 +110,7 @@ export function Footer() {
           {/* Scroll to Top Button */}
           <motion.button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-all"
+            className="p-3 rounded-full bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white transition-all"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Scroll to top"

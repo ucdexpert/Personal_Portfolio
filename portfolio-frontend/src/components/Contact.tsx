@@ -143,7 +143,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-white dark:bg-gray-800">
+    <section id="contact" className="py-20 md:py-32 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -154,7 +154,7 @@ export function Contact() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <motion.span
-              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
+              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium mb-4 border border-blue-200 dark:border-transparent"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2 }}
@@ -170,7 +170,7 @@ export function Contact() {
               Contact Me
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -186,7 +186,7 @@ export function Contact() {
                 <motion.a
                   key={info.label}
                   href={info.href}
-                  className="group block p-6 rounded-2xl bg-gray-50 dark:bg-gray-700/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-md hover:shadow-xl border border-gray-100 dark:border-gray-600"
+                  className="group block p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 hover:bg-white dark:hover:bg-slate-800/80 transition-all shadow-md hover:shadow-xl border border-blue-100 dark:border-slate-700"
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.5 + index * 0.1 }}
@@ -208,7 +208,7 @@ export function Contact() {
 
               {/* Social Links */}
               <motion.div
-                className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600"
+                className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.8 }}
@@ -229,7 +229,7 @@ export function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all shadow-md"
+                      className="p-3 rounded-xl bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all shadow-md border border-gray-200 dark:border-slate-700"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
                       aria-label={social.label}
@@ -244,7 +244,7 @@ export function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <motion.div
-                className="p-8 rounded-2xl bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600"
+                className="p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700 shadow-md"
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.5 }}
@@ -265,11 +265,11 @@ export function Contact() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border ${
+                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border-2 ${
                           errors.name
                             ? "border-red-500 focus:border-red-500"
-                            : "border-gray-200 dark:border-gray-600 focus:border-blue-500"
-                        } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all`}
+                            : "border-gray-200 dark:border-slate-600 focus:border-blue-500"
+                        } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all`}
                         placeholder="John Doe"
                       />
                       {errors.name && (
@@ -298,11 +298,11 @@ export function Contact() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border ${
+                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border-2 ${
                           errors.email
                             ? "border-red-500 focus:border-red-500"
-                            : "border-gray-200 dark:border-gray-600 focus:border-blue-500"
-                        } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all`}
+                            : "border-gray-200 dark:border-slate-600 focus:border-blue-500"
+                        } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all`}
                         placeholder="john@example.com"
                       />
                       {errors.email && (
@@ -332,11 +332,11 @@ export function Contact() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border ${
+                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border-2 ${
                         errors.subject
                           ? "border-red-500 focus:border-red-500"
-                          : "border-gray-200 dark:border-gray-600 focus:border-blue-500"
-                      } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all`}
+                          : "border-gray-200 dark:border-slate-600 focus:border-blue-500"
+                      } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all`}
                       placeholder="Project Inquiry"
                     />
                     {errors.subject && (
@@ -365,11 +365,11 @@ export function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
-                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border ${
+                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border-2 ${
                         errors.message
                           ? "border-red-500 focus:border-red-500"
-                          : "border-gray-200 dark:border-gray-600 focus:border-blue-500"
-                      } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all resize-none`}
+                          : "border-gray-200 dark:border-slate-600 focus:border-blue-500"
+                      } text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all resize-none`}
                       placeholder="Tell me about your project..."
                     />
                     {errors.message && (
@@ -388,7 +388,7 @@ export function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
