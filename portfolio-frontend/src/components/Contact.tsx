@@ -90,7 +90,7 @@ export function Contact() {
 
       // Uncomment below to use actual API
       /*
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const response = await fetch("https://uzair001-portfolio-web.hf.space/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

@@ -27,7 +27,7 @@ const QUICK_REPLIES: QuickReply[] = [
 const WELCOME_MESSAGE =
   "Hi! I'm Uzair's AI assistant. Ask me anything about his projects, skills, or how to contact him! 👋";
 
-const API_URL = "http://localhost:8000/api/chat";
+const API_URL = "https://uzair001-portfolio-web.hf.space/api/chat";
 
 // Smart fallback responses
 const SMART_RESPONSES: Record<string, string> = {
