@@ -170,7 +170,7 @@ export function Contact() {
               Contact Me
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}

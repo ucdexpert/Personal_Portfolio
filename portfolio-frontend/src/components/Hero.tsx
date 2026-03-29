@@ -152,7 +152,7 @@ export function Hero() {
 
         {/* Typing effect */}
         <motion.div variants={itemVariants} className="mb-6 h-12 flex items-center justify-center">
-          <span className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300">
+          <span className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300">
             I&apos;m a{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
               {displayedText}
@@ -168,7 +168,7 @@ export function Hero() {
         {/* Bio */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+          className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
         >
           Passionate about creating beautiful, functional, and user-centered digital
           experiences. With expertise in modern web technologies, I bring ideas to life

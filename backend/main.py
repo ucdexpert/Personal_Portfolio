@@ -1,6 +1,6 @@
 """
 FastAPI Backend for Portfolio Contact Form
-Handles email sending for contact form submissions
+Handles email sending for contact form submissions and AI Chatbot
 """
 
 import os
@@ -9,12 +9,16 @@ import logging
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from typing import Optional
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
+
+from database import create_tables, init_db_session_maker
+from routers import chat
 
 # Load environment variables
 load_dotenv()
@@ -37,11 +41,25 @@ class Settings(BaseSettings):
     host: str = os.getenv("HOST", "0.0.0.0")
     port: int = int(os.getenv("PORT", "8000"))
 
-    class Config:
-        env_file = ".env"
+    model_config = {"extra": "ignore"}
 
 
 settings = Settings()
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Application lifespan handler for startup/shutdown events"""
+    # Startup: Initialize database
+    logger.info("Initializing database...")
+    init_db_session_maker()
+    await create_tables()
+    logger.info("Database initialized successfully")
+    
+    yield
+    
+    # Shutdown: cleanup if needed
+    logger.info("Shutting down application...")
 
 
 class ContactForm(BaseModel):
@@ -62,8 +80,9 @@ class ContactResponse(BaseModel):
 
 app = FastAPI(
     title="Portfolio Contact API",
-    description="API for handling contact form submissions",
+    description="API for handling contact form submissions and AI chatbot",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 # CORS middleware
@@ -71,9 +90,20 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[settings.frontend_url, "http://localhost:3000", "http://127.0.0.1:3000"],
     allow_credentials=True,
-    allow_methods=["POST", "OPTIONS"],
+    allow_methods=["POST", "GET", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type"],
 )
+
+# Include routers
+app.include_router(chat.router)
+
+# Print registered routes on startup
+@app.on_event("startup")
+async def print_routes():
+    logger.info("Registered routes:")
+    for route in app.routes:
+        if hasattr(route, "path") and hasattr(route, "methods"):
+            logger.info(f"  {list(route.methods)[0] if route.methods else 'N/A':6} {route.path}")
 
 
 def send_email(name: str, email: str, subject: str, message: str) -> bool:

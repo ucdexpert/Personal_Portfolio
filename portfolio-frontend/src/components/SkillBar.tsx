@@ -69,7 +69,7 @@ export function SkillCard({ name, level, icon, delay = 0 }: SkillCardProps) {
       </div>
 
       {/* Name */}
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
         {name}
       </h3>
 
@@ -88,7 +88,7 @@ export function SkillCard({ name, level, icon, delay = 0 }: SkillCardProps) {
       </div>
 
       {/* Level text */}
-      <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{level}% proficiency</p>
+      <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">{level}% proficiency</p>
 
       {/* Hover gradient overlay */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

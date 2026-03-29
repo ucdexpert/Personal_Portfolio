@@ -53,7 +53,7 @@ export function About() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <motion.span
-              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-medium mb-4 border border-blue-200 dark:border-transparent"
+              className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2 }}
@@ -104,7 +104,7 @@ export function About() {
 
                 {/* Floating badge */}
                 <motion.div
-                  className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-slate-700"
+                  className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-xl border border-gray-200 dark:border-slate-700"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -155,7 +155,7 @@ export function About() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700"
+                    className="p-4 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
                   >
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       {item.label}
@@ -169,7 +169,7 @@ export function About() {
 
               <motion.a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -194,7 +194,7 @@ export function About() {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="relative group p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-slate-800 dark:to-slate-800 border border-blue-100 dark:border-slate-700 text-center hover:bg-white dark:hover:bg-slate-800/80 transition-all shadow-md hover:shadow-xl"
+                className="relative group p-6 rounded-2xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-center hover:bg-white dark:hover:bg-slate-800/80 transition-all shadow-md hover:shadow-xl"
                 whileHover={{ y: -5, scale: 1.02 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -208,7 +208,7 @@ export function About() {
                 </div>
 
                 {/* Counter */}
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-white mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
                   <AnimatedCounter end={stat.end} suffix={stat.suffix} />
                 </div>
 

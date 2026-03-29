@@ -44,7 +44,7 @@ export function Projects() {
               Featured Projects
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -67,7 +67,7 @@ export function Projects() {
                 className={`px-6 py-3 rounded-full font-medium transition-all border-2 ${
                   activeFilter === category.id
                     ? "bg-blue-600 text-white border-blue-600 shadow-md"
-                    : "bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500"
+                    : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -17,7 +17,7 @@ export function Timeline() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-purple-50/40 to-slate-50 dark:bg-slate-800">
+    <section className="py-20 md:py-32 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -44,7 +44,7 @@ export function Timeline() {
               Experience & Education
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -56,7 +56,7 @@ export function Timeline() {
           {/* Timeline */}
           <div className="relative">
             {/* Center line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 md:-translate-x-1/2" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-slate-600 md:-translate-x-1/2" />
 
             {/* Timeline items */}
             <div className="space-y-12">
@@ -77,7 +77,7 @@ export function Timeline() {
                     {/* Timeline dot */}
                     <div className="absolute left-4 md:left-1/2 w-4 h-4 -translate-x-1/2 mt-6">
                       <motion.div
-                        className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white dark:border-slate-800 shadow-lg"
+                        className="w-full h-full rounded-full bg-blue-600 border-4 border-white dark:border-slate-900 shadow-lg"
                         initial={{ scale: 0 }}
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
                         transition={{ duration: 0.4, delay: 0.5 + index * 0.15 }}
@@ -97,7 +97,7 @@ export function Timeline() {
                       }`}
                     >
                       <motion.div
-                        className="group p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all border border-gray-100 dark:border-slate-700 border-l-4 border-l-blue-500"
+                        className="group p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-md hover:shadow-xl transition-all border border-gray-200 dark:border-slate-700 border-l-4 border-l-blue-500"
                         whileHover={{ y: -5, scale: 1.02 }}
                       >
                         {/* Icon badge */}
@@ -127,7 +127,7 @@ export function Timeline() {
 
                         {/* Company/Institution */}
                         <div
-                          className={`flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-3 ${
+                          className={`flex items-center gap-2 text-gray-700 dark:text-gray-300 mb-3 ${
                             isEven ? "md:justify-end" : ""
                           }`}
                         >
@@ -147,7 +147,7 @@ export function Timeline() {
 
                         {/* Description bullets */}
                         <ul
-                          className={`space-y-2 text-gray-600 dark:text-gray-300 text-sm ${
+                          className={`space-y-2 text-gray-700 dark:text-gray-300 text-sm ${
                             isEven ? "md:text-right" : ""
                           }`}
                         >

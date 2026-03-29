@@ -80,7 +80,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-2">
           {project.description}
         </p>
 
@@ -89,13 +89,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.techStack.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 text-xs font-medium"
+              className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-xs font-medium"
             >
               {tech}
             </span>
           ))}
           {project.techStack.length > 4 && (
-            <span className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 text-xs font-medium">
+            <span className="px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-xs font-medium">
               +{project.techStack.length - 4}
             </span>
           )}

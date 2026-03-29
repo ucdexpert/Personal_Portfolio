@@ -19,7 +19,7 @@ export function Skills() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:bg-slate-800">
+    <section id="skills" className="py-20 md:py-32 bg-gray-50 dark:bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -46,7 +46,7 @@ export function Skills() {
               Technologies I Work With
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -85,7 +85,7 @@ export function Skills() {
                       className="ml-auto"
                     >
                       <svg
-                        className="w-5 h-5 text-gray-400"
+                        className="w-5 h-5 text-gray-500"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -145,7 +145,7 @@ export function Skills() {
               ].map((skill, index) => (
                 <motion.span
                   key={skill}
-                  className="px-4 py-2 rounded-full bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-300 text-sm font-medium shadow-md border border-gray-200 dark:border-slate-700"
+                  className="px-4 py-2 rounded-full bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-200 text-sm font-medium shadow-md border border-gray-200 dark:border-slate-700"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: 1.3 + index * 0.05 }}
